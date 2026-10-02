@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reisid>
+	<reis id="R001" hinnang="9">
+		<sihtkoht>Pariis</sihtkoht>
+		<transport>
+			<liik>lennureis</liik>
+			<hind>300</hind>
+		</transport>
+		<majutus>
+			<hotell>Hotel Paris</hotell>
+			<hind>500</hind>
+		</majutus>
+		<ekskursioonid>
+			<ekskursioon>
+				<nimi>Eiffeli torn</nimi>
+				<hind>100</hind>
+			</ekskursioon>
+			<ekskursioon>
+				<nimi>Louvre</nimi>
+				<hind>80</hind>
+			</ekskursioon>
+		</ekskursioonid>
+		<muudkulud>
+			<hind>70</hind>
+		</muudkulud>
+	</reis>
+	<reis id="R002" hinnang="8">
+		<sihtkoht>Helsingi</sihtkoht>
+		<transport>
+			<liik>laev</liik>
+			<hind>80</hind>
+		</transport>
+		<majutus>
+			<hotell>City Hotel</hotell>
+			<hind>300</hind>
+		</majutus>
+		<ekskursioonid>
+			<ekskursioon>
+				<nimi>Suomenlinna</nimi>
+				<hind>40</hind>
+			</ekskursioon>
+		</ekskursioonid>
+		<muudkulud>
+			<hind>50</hind>
+		</muudkulud>
+	</reis>
+	<reis id="R003" hinnang="10">
+		<sihtkoht>London</sihtkoht>
+		<transport>
+			<liik>lennureis</liik>
+			<hind>250</hind>
+		</transport>
+		<majutus>
+			<hotell>London Hotel</hotell>
+			<hind>450</hind>
+		</majutus>
+		<ekskursioonid>
+			<ekskursioon>
+				<nimi>Big Ben</nimi>
+				<hind>60</hind>
+			</ekskursioon>
+			<ekskursioon>
+				<nimi>Tower Bridge</nimi>
+				<hind>50</hind>
+			</ekskursioon>
+		</ekskursioonid>
+		<muudkulud>
+			<hind>100</hind>
+		</muudkulud>
+	</reis>
+	<reis id="R004" hinnang="7">
+		<sihtkoht>Stockholm</sihtkoht>
+		<transport>
+			<liik>laev</liik>
+			<hind>100</hind>
+		</transport>
+		<majutus>
+			<hotell>Central Hotel</hotell>
+			<hind>280</hind>
+		</majutus>
+		<ekskursioonid>
+			<ekskursioon>
+				<nimi>Vasa Museum</nimi>
+				<hind>45</hind>
+			</ekskursioon>
+		</ekskursioonid>
+		<muudkulud>
+			<hind>40</hind>
+		</muudkulud>
+	</reis>
+	<reis id="R005" hinnang="9">
+		<sihtkoht>Barcelona</sihtkoht>
+		<transport>
+			<liik>lennureis</liik>
+			<hind>280</hind>
+		</transport>
+		<majutus>
+			<hotell>Barcelona Hotel</hotell>
+			<hind>400</hind>
+		</majutus>
+		<ekskursioonid>
+			<ekskursioon>
+				<nimi>Sagrada Familia</nimi>
+				<hind>70</hind>
+			</ekskursioon>
+			<ekskursioon>
+				<nimi>Park Guell</nimi>
+				<hind>40</hind>
+			</ekskursioon>
+		</ekskursioonid>
+		<muudkulud>
+			<hind>60</hind>
+		</muudkulud>
+	</reis>
+</reisid>
