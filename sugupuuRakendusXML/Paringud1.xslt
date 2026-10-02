@@ -3,6 +3,11 @@
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
 >
 	<xsl:output method="xml" indent="yes"/>
+	
+	<!--parameetri määramine-->
+	<xsl:param name ="otsing">ll</xsl:param>
+
+	<xsl:param name ="pikkus">9</xsl:param>
 
 	<xsl:template match="/">
 		<strong>Kõik sugupuu nimed</strong>
@@ -31,37 +36,90 @@
 				</xsl:for-each>
 			</li>
 		</ol>
-		
-		<table border="1">
+
+		<strong>Värvime nimed pikkusega rohkem 7</strong>
+		<table>
+			<tr>
+				<th>Nimi </th>
+				<th>Aasta </th>
+				<th>Vanus </th>
+				<th>1 täht </th>
+				<th>Viimane täht </th>
+			</tr>
 			<xsl:for-each select="//inimene">
 				<tr>
-					<th>Nimi</th>
-					<td border ="1">
+					<xsl:attribute name ="style">background-color:lightpink;</xsl:attribute>
+					<td style="border: 1px solid black;">
 						<xsl:value-of select="nimi"/>
 					</td>
-
-					<td border ="1">
-						<th>Aasta</th>
+					<td style="border: 1px solid black;">
 						<xsl:value-of select="@synd"/>
 					</td>
-
-					<td border ="1">
-						<th>Vanus</th>
+					<td style="border: 1px solid black;">
 						<xsl:value-of select="2026 - @synd"/>
 					</td>
-
-					<td border ="1">
-						<th>1 häht</th>
+					<td style="border: 1px solid black;">
 						<xsl:value-of select="substring(nimi, 1, 1)"/>
 					</td>
-
-					<td border ="1">
-						<th>viimane täht</th>
+					<td style="border: 1px solid black;">
 						<xsl:value-of select="substring(nimi, string-length(nimi), 1)"/>
 					</td>
 				</tr>
 			</xsl:for-each>
-		
 		</table>
+
+		<strong>Näita kõik nimed mis algavd C-tähega: </strong>
+		<xsl:for-each select="//inimene[starts-with(nimi, 'C')]">
+			 <xsl:value-of select="nimi"/>,
+		</xsl:for-each>
+		<br/>
+		<strong>Parameetrite kasutamine</strong>
+		<br/>
+		Otsime nimed mis siseldab pareemt otsing = 
+		<xsl:value-of select="$otsing"/>
+		<br/>
+		<xsl:for-each select="//inimene[contains(nimi, $otsing)]">
+		
+			<xsl:value-of select="nimi"/>, 
+			
+		</xsl:for-each>
+		<br/>
+		Otsime nimed mis pikkusega =
+		<xsl:value-of select="$pikkus"/> ja rohrem
+		<br/>
+		<xsl:for-each select="//inimene[string-length(nimi)>=$pikkus]">
+
+			<xsl:value-of select="concat(nimi,' pikkus: ', string-length(nimi))"/>,
+
+		</xsl:for-each>
+
+		<br/>
+		<strong>Kasutame if lause: </strong>
+		Iga inimese kohta näitame mitmendal oma vahema sünnastal ta sündis
+		<ul>
+			<xsl:for-each select="//inimene">
+				<li>
+					<xsl:value-of select="nimi"/>
+					<xsl:if test="../..">
+						-vanema vanus oli  -
+						<xsl:value-of select="../../@synd -@synd"></xsl:value-of>Aastat vana
+					</xsl:if>
+				</li>
+			</xsl:for-each>
+		</ul>
+		<br/>
+		<strong>Kasutame if lause: </strong>
+		Iga inimese kohta näitame mitmendal oma vahema sünnastal ta sündis
+		<ul>
+			<xsl:for-each select="//inimene">
+				<li>
+					<xsl:value-of select="nimi"/>
+					<xsl:if test="../..">
+						-vanema vanus oli  -
+						<xsl:value-of select="../../@synd -@synd"></xsl:value-of>Aastat vana
+					</xsl:if>
+				</li>
+			</xsl:for-each>
+		</ul>
 	</xsl:template>
 </xsl:stylesheet>
